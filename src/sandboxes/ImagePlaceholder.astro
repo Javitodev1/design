@@ -1,0 +1,51 @@
+---
+const resolutions = {
+  background: {
+    width: 1600,
+    height: 900,
+    css: 'aspect-video w-[1600px]',
+  },
+  blog: {
+    width: 1200,
+    height: 800,
+    css: 'aspect-blog w-[1200px]',
+  },
+  full: {
+    width: 1440,
+    height: 810,
+    css: 'aspect-video w-[1400px]',
+  },
+  half: {
+    width: 700,
+    height: 700,
+    css: 'aspect-square w-[700px]',
+  },
+  third: {
+    width: 480,
+    height: 480,
+    css: 'aspect-square w-[480px]',
+  },
+  quarter: {
+    width: 360,
+    height: 360,
+    css: 'aspect-square w-[360px]',
+  },
+}
+
+interface Props {
+  variant: 'background' | 'blog' | 'full' | 'half' | 'third' | 'quarter'
+  class?: string
+}
+
+const { variant, class: className } = Astro.props
+const { width, height, css } = resolutions[variant]
+---
+
+<img
+  class:list={[css, className]}
+  src=`https://placehold.co/${width}x${height}/png`
+  alt=`placeholder-image-${width}x${height}`
+  class='h-auto object-cover'
+  width={width}
+  height={height}
+/>

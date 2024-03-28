@@ -1,0 +1,16 @@
+.scroll {
+  scrollbar-gutter: stable both-edges;
+  scrollbar-color: #3a3a3a #ffffff00;
+}
+
+.scroll-header {
+  scrollbar-width: thin;
+}
+/* 
+.scroll-header:hover {
+  scrollbar-width: thin;
+} */
+
+.scroll-main {
+  scrollbar-width: thin;
+}

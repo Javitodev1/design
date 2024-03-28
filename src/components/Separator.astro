@@ -1,0 +1,34 @@
+---
+interface Props {
+  directionX?: 'normal' | 'reverse'
+  directionY?: 'normal' | 'reverse'
+}
+
+const { directionX = 'normal', directionY = 'normal' } = Astro.props
+---
+
+<div
+  class='h-20 w-full bg-primary dark:bg-dark-primary'
+  class:list={[{ 'rotate-180': directionY === 'reverse' }]}
+>
+  <div
+    class='h-full w-full bg-secondary dark:bg-dark-secondary'
+    class:list={[
+      {
+        'cut-1': directionX === 'normal',
+        'cut-2': directionX === 'reverse',
+      },
+    ]}
+  >
+  </div>
+</div>
+
+<style>
+  .cut-1 {
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+  }
+
+  .cut-2 {
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+import SidebarHeader from './SidebarHeader.astro'
+
+interface Props {
+  title?: string
+}
+
+const { title } = Astro.props
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+    <link rel='stylesheet' href='/css/index.css' />
+  </head>
+  <body>
+    <div class='flex h-screen gap-4 bg-primary p-4 dark:bg-dark-primary'>
+      <div
+        class='scroll scroll-header h-full w-[300px] overflow-y-auto rounded bg-secondary dark:bg-dark-secondary'
+      >
+        <SidebarHeader />
+      </div>
+      <main
+        class='scroll scroll-main h-full w-full overflow-y-auto rounded bg-secondary dark:bg-dark-secondary'
+      >
+        <slot></slot>
+      </main>
+    </div>
+  </body>
+</html>

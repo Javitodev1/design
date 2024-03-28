@@ -1,0 +1,1 @@
+https://bootcamp.uxdesign.cc/9-section-layouts-to-improve-the-design-of-your-website-fb62ea89c4e9

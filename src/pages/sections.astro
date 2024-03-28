@@ -1,0 +1,31 @@
+---
+import Horizontal from '@/components/sections/Horizontal.astro'
+import Sidebar from '@/layouts/Sidebar.astro'
+import Sandbox from '@/sandboxes/Sandbox.astro'
+---
+
+<Sidebar>
+  <section class='py-12'>
+    <h1 class='text-center text-5xl font-bold uppercase text-white'>
+      Section Layouts
+    </h1>
+  </section>
+
+  <section class='mb-20'>
+    <h2 class='mb-4 text-center text-4xl capitalize text-white'>
+      Horizontal Section Right
+    </h2>
+    <Sandbox>
+      <Horizontal variant='right' />
+    </Sandbox>
+  </section>
+
+  <section class='mb-20'>
+    <h2 class='mb-4 text-center text-4xl capitalize text-white'>
+      Horizontal Section Left
+    </h2>
+    <Sandbox>
+      <Horizontal variant='left' />
+    </Sandbox>
+  </section>
+</Sidebar>

@@ -1,0 +1,56 @@
+---
+import ImagePlaceholder from '@/sandboxes/ImagePlaceholder.astro'
+
+interface Props {
+  variant?: 'left' | 'right'
+}
+
+const { variant = 'right' } = Astro.props
+---
+
+<section class='h-screen w-full bg-primary'>
+  <div class='mx-auto max-w-6xl'>
+    <div class='flex'>
+      <div
+        class='aspect-square h-auto w-[700px]'
+        class:list={[
+          {
+            'order-1': variant === 'left',
+            'order-2': variant === 'right',
+          },
+        ]}
+      >
+        <ImagePlaceholder variant='half' />
+      </div>
+      <div
+        class:list={[
+          {
+            'order-2 ml-12': variant === 'left',
+            'order-1 mr-12': variant === 'right',
+          },
+        ]}
+      >
+        <div class='flex h-full flex-col justify-center'>
+          <h2
+            style='text-wrap: balance;'
+            class='mb-4 text-4xl font-bold first-letter:uppercase'
+          >
+            lorem ipsum dolor sit amet.
+          </h2>
+          <p style='text-wrap: pretty;' class='mb-10'>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit,
+            laborum saepe? Nam vitae ducimus expedita itaque perspiciatis
+            possimus optio sed?
+          </p>
+          <span>
+            <a
+              href='#'
+              class='bg-black px-3 py-2 text-lg font-bold uppercase text-white'
+              >call to action
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
